@@ -36,3 +36,13 @@ def bus_stations(request):
     }
 
     return render(request, 'stations/index.html', context)
+
+#
+
+# context = {
+#                 'id': phone['id'],
+#                 'name': phone['name'],
+#                 'image': phone['image'],
+#                 'price': phone['price'], # не требуется.
+#                 'release_date': phone['release_date'],
+#                 'lte_exists': phone['lte_exists']
