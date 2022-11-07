@@ -24,8 +24,3 @@ class Command(BaseCommand):
             phone.save()
 
 
-
-  # if phone['lte_exists'] == True:
-            #     lte_exists = 'yes'
-            # else:
-            #     lte_exists = 'no'

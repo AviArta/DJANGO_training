@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Книги</title>
+</head>
+<body>
+    <H1>{{ book.name }}</H1>
+    <p>Автор: {{ book.author }}</p>
+    <p>Дата публикации: {{ pub_date }}</p>
+    <p></p>
+    <a href="{% url 'by_date' pub_date=pub_date %}"><button>Книги по дате публикации</button></a>
+    <a href="{% url 'books' %}"><button>К полному списку книг</button></a>
+</body>
+</html>
