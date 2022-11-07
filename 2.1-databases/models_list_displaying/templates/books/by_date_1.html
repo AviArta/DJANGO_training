@@ -6,7 +6,7 @@
 {% block content %}
     <div class="container">
         <div class="header">
-            <h3><a href="/books">По дате публикации {{ pub_date }}</a></h3>
+            <h3>По дате публикации {{ pub_date }}</a></h3>
         </div>
         <div class="row">
             {% for book in books_obj %}
@@ -17,9 +17,13 @@
             {% endfor %}
         </div>
         <div>
-            <a href="{% url 'by_date' pub_date=pub_date %}"><button>{{ previous.pub_date }}</button></a>
+            {% if not previous is None %}
+                <a href="{% url 'by_date' pub_date=pub_date %}"><button>{{ previous.pub_date }}</button></a>
+            {% endif %}
             <button>{{ pub_date }}</button>
-            <a href="{% url 'hello_' %}"><button>{{ next.pub_date }}</button></a>
+            {% if not next is None %}
+                <a href="{% url 'hello_' %}"><button>{{ next.pub_date }}</button></a>
+            {% endif %}
         </div>
         <p></p>
         <div>
