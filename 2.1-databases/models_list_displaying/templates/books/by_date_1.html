@@ -8,8 +8,8 @@
         <div class="header">
             <h3>По дате публикации {{ pub_date }}</a></h3>
         </div>
+        {% for book in books_obj %}
         <div class="row">
-            {% for book in books_obj %}
             <div class="book col-md-4">
                 <h2><a href="{% url 'book_info' book_id=book.id %}">{{ book.name }}</a></h2>
                 <p>Автор: {{ book.author }}
@@ -17,12 +17,12 @@
             {% endfor %}
         </div>
         <div>
-            {% if not previous is None %}
-                <a href="{% url 'by_date' pub_date=pub_date %}"><button>{{ previous.pub_date }}</button></a>
+            {% if previous.pub_date %}
+                <a href="{% url 'by_date' previous.pub_date|date:'Y-m-d' %}"><button>{{ previous.pub_date }}</button></a>
             {% endif %}
             <button>{{ pub_date }}</button>
-            {% if not next is None %}
-                <a href="{% url 'hello_' %}"><button>{{ next.pub_date }}</button></a>
+            {% if next.pub_date %}
+                <a href="{% url 'by_date' next.pub_date|date:'Y-m-d' %}"><button>{{ next.pub_date }}</button></a>
             {% endif %}
         </div>
         <p></p>
