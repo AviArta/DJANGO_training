@@ -14,7 +14,7 @@
                 <h2><a href="{% url 'book_info' book_id=book.id %}">{{ book.name }}</a></h2>
                 <p>Автор: {{ book.author }}
             </div>
-            {% endfor %}
+        {% endfor %}
         </div>
         <div>
             {% if previous.pub_date %}
