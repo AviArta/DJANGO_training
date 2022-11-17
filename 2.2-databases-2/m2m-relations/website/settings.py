@@ -24,6 +24,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+RUN_SERVER_PORT = 8080
 
 SITE_ID = 1
 
@@ -79,6 +80,8 @@ DATABASES = {
         'NAME': 'netology_m2m_relations',
         'HOST': '127.0.0.1',
         'PORT': '5432',
+        'USER': 'postgres',
+        'PASSWORD': 'ArtAvia11'
     }
 }
 
