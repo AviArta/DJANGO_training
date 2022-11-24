@@ -11,4 +11,5 @@ class Sensor(models.Model):
 class Measurement(models.Model):
     sensor_id = models.ForeignKey(Sensor, on_delete=models.CASCADE)
     temperature = models.FloatField()
-    created_at = models.DateTimeField()
+    nullable = models.ImageField(upload_to='C:/Users/kuvsh/Desktop/HELP_Files', blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)

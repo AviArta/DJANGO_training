@@ -18,7 +18,7 @@ class ScopeInlineFormset(BaseInlineFormSet):
         elif counter >= 1:
             raise ValidationError('Основным может быть только один раздел')
         elif counter == 0:
-            raise ValidationError('Укажите тег')
+            raise ValidationError('Укажите главный тег')
 
 
 class ScopeInline(admin.TabularInline):
