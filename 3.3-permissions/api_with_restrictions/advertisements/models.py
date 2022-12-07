@@ -1,5 +1,6 @@
 from django.conf import settings
 from django.db import models
+from rest_framework.authtoken.admin import User
 
 
 class AdvertisementStatusChoices(models.TextChoices):
@@ -7,6 +8,7 @@ class AdvertisementStatusChoices(models.TextChoices):
 
     OPEN = "OPEN", "Открыто"
     CLOSED = "CLOSED", "Закрыто"
+    DRAFT = 'DRAFT'
 
 
 class Advertisement(models.Model):
@@ -28,3 +30,4 @@ class Advertisement(models.Model):
     updated_at = models.DateTimeField(
         auto_now=True
     )
+    favorite_by = models.ManyToManyField(User, default=True, related_name='favorite_adv')
